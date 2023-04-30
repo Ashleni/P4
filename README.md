@@ -14,10 +14,10 @@ APIs:
 --
 
 ### Launch Codes:
-`git clone git@github.com:Ashleni/P4.git`
-`cd ~/P4`
-`pip install -r requirements.txt
-`python3 app/__init__.py`
+1. `git clone git@github.com:Ashleni/P4.git`
+2. `cd ~/P4`
+3. `pip install -r requirements.txt
+4. `python3 app/__init__.py`
 
 
 --
