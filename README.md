@@ -1,9 +1,9 @@
-# <insert witty proj name here>
+# insert witty proj name here
 
-Shreya Roy : PM , js
-Jeffrey Zou : flask , api
-Kosta Dubovskiy : js , db
-Shafiul Haque : html , css
+* Shreya Roy : PM , js
+* Jeffrey Zou : flask , api
+* Kosta Dubovskiy : js , db
+* Shafiul Haque : html , css
 
 
 ### Creating interactive maps of the US detailing the location of fast food restaurants, with filtering options available by chain.
