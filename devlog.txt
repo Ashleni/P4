@@ -1,0 +1,7 @@
+firstL -- TIMESTAMP\n
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShreyaR, ShafiulH, JeffreyZ KostaD -- 05/03
+
+Changed path in site map from map to different data visualizations
+Changed Component Math to relfect changes in DB
+Added more details regarding JS visualizations.
