@@ -5,3 +5,8 @@ ShreyaR, ShafiulH, JeffreyZ KostaD -- 05/03
 Changed path in site map from map to different data visualizations
 Changed Component Math to relfect changes in DB
 Added more details regarding JS visualizations.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShreyaR, ShafiulH, JeffreyZ KostaD -- 05/07 9:00
+
+root route yields HTML page with linked JS
