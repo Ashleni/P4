@@ -13,12 +13,12 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 #Reading data
-data_df = pd.read_csv("app/static/data/churn_data.csv")
+data_df = pd.read_csv("./static/data/churn_data.csv")
 churn_df = data_df[(data_df['Churn']=="Yes").notnull()]
 
 
 @app.route("/")
-def hello_world():
+def index():
     return render_template('index.html')
 
 def calculate_percentage(val, total):
@@ -85,3 +85,4 @@ if __name__ == "__main__":  # true if this file NOT imported
 # if __name__ == "__main__":  # true if this file NOT imported
 #     app.debug = True        # enable auto-reload upon code change
 #     app.run()
+
