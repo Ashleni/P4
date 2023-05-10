@@ -71,7 +71,7 @@ function d3BarChart(datasetBarChart){
        .text(function(d) {
                return d.value+"%";
        })
-       .attr("text-anchor", "middle")
+       .attr("text-anchor", "left")
 
        .attr("x", function(d, i) {
                return (i * (width / defaultBarChart.length)) + ((width / defaultBarChart.length - barPadding) / 2);
