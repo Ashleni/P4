@@ -17,11 +17,12 @@ app = Flask(__name__)
 data_df = pd.read_csv("./static/data/churn_data.csv")
 churn_df = data_df[(data_df['Churn']=="Yes").notnull()]
 
-with open('static/data/FastFoodRestaurants.csv', 'r') as csv_file:
+#bugged csv reader
+'''with open('static/data/FastFoodRestaurants.csv', 'r') as csv_file:
     reader = csv.reader(csv_file)
     reader.skipLine()
     for row in reader:
-        print(row)
+        print(row)'''
 
 
 @app.route("/")
