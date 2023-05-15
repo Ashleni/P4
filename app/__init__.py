@@ -5,6 +5,7 @@ from flask import session           #facilitate sessions!
 from flask import redirect
 import os                           #facilitate key generation
 import sqlite3
+import csv
 import pandas as pd
 import numpy as np
 #______________________
@@ -15,6 +16,13 @@ app = Flask(__name__)
 #Reading data
 data_df = pd.read_csv("./static/data/churn_data.csv")
 churn_df = data_df[(data_df['Churn']=="Yes").notnull()]
+
+#bugged csv reader
+'''with open('static/data/FastFoodRestaurants.csv', 'r') as csv_file:
+    reader = csv.reader(csv_file)
+    reader.skipLine()
+    for row in reader:
+        print(row)'''
 
 
 @app.route("/")
