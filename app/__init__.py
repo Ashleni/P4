@@ -21,9 +21,9 @@ churn_df = data_df[(data_df['Churn']=="Yes").notnull()]
 #bugged csv reader
 df = pd.read_csv('static/data/FastFoodRestaurants.csv', skiprows=0)
 
-for i in range(len(df.index)):
-    store_rest_data(df.loc[i])
-
+if (countrest() == 0):
+    for i in range(len(df.index)):
+        store_rest_data(df.loc[i])
 
 @app.route("/")
 def index():
