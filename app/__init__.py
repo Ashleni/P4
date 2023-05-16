@@ -25,9 +25,10 @@ churn_df = data_df[(data_df['Churn']=="Yes").notnull()]
     for row in reader:
         print(row)'''
 df = pd.read_csv('static/data/FastFoodRestaurants.csv', skiprows=0)
+
 for i in range(len(df.index)):
     store_rest_data(df.loc[i])
-    print(df.loc[i][0], df.loc[i][1], df.loc[i][2], df.loc[i][3], df.loc[i][4], df.loc[i][5], df.loc[i][6], df.loc[i][7], df.loc[i][8], df.loc[i][9])
+    # print(df.loc[i][0], df.loc[i][1], df.loc[i][2], df.loc[i][3], df.loc[i][4], df.loc[i][5], df.loc[i][6], df.loc[i][7], df.loc[i][8], df.loc[i][9])
 # for row in df.to_string():
 #     print(row.to_string())
 
