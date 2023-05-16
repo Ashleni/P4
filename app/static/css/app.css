@@ -1,3 +1,7 @@
-* {
+.visualization {
+    margin: .5rem; // breaks map
+}
+
+.graph {
     margin: .5rem;
 }

@@ -25,7 +25,6 @@ if (countrest() == 0):
     for i in range(len(df.index)):
         store_rest_data(df.loc[i])
 
-
 @app.route("/")
 def index():
     return render_template('index.html')
