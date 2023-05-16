@@ -45,6 +45,11 @@ def store_pov_data(stored_data):
     db.commit()
     db.close()
 
+def countrest():
+    count_rest = c.execute("""SELECT COUNT(*) FROM usrest""")
+    count_rest = c.fetchone()[0]
+    return count_rest
+
 def get_rest_everything():
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
