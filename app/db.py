@@ -6,7 +6,7 @@ P04
 2022-05-01
 '''
 
-from flask import Flask, session, render_template, redirect, url_for, request as flask_request
+from flask import Flask, session, jsonify, render_template, redirect, url_for, request as flask_request
 from db import *
 from urllib import *
 import http.client
@@ -74,3 +74,13 @@ def get_pov_everything():
     db.close()
     return povlist
 
+def get_restaurant_coordinates():
+    db = sqlite3.connect('p4.db')
+    print("Database connection successful")
+    c = db.cursor()
+    c.execute("SELECT name, latitude, longitude FROM usrest;")
+    restaurants = c.fetchall()
+    db.commit()
+    db.close()
+    print(restaurants)
+    return jsonify(restaurants)

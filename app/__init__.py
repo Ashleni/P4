@@ -9,6 +9,7 @@ import sqlite3
 import csv
 import pandas as pd
 import numpy as np
+import json
 #______________________
 app = Flask(__name__)    #create Flask object
 from flask import Flask, render_template
@@ -18,16 +19,19 @@ app = Flask(__name__)
 data_df = pd.read_csv("./static/data/churn_data.csv")
 churn_df = data_df[(data_df['Churn']=="Yes").notnull()]
 
-#bugged csv reader
-df = pd.read_csv('static/data/FastFoodRestaurants.csv', skiprows=0)
+#csv reader, already completed created db
+'''df = pd.read_csv('static/data/FastFoodRestaurants.csv', skiprows=0)
 
 if (countrest() == 0):
     for i in range(len(df.index)):
-        store_rest_data(df.loc[i])
+        store_rest_data(df.loc[i])'''
+
+
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    restaurants = get_restaurant_coordinates()
+    return render_template('index.html', restaurants = restaurants)
 
 def calculate_percentage(val, total):
    """Calculates the percentage of a value over a total"""
@@ -41,6 +45,18 @@ def data_creation(data, percent, class_labels, group=None):
        data_instance['value'] = item
        data_instance['group'] = group
        data.append(data_instance)
+
+@app.route('/restaurants')
+def get_restaurant_coordinates():
+    db = sqlite3.connect('p4.db')
+    print("Database connection successful")
+    c = db.cursor()
+    c.execute("SELECT name, latitude, longitude FROM usrest;")
+    restaurants = c.fetchall()
+    db.commit()
+    db.close()
+    print(restaurants)
+    return jsonify(restaurants)
 
 @app.route('/get_piechart_data')
 def get_piechart_data():
@@ -80,7 +96,6 @@ def get_barchart_data():
 if __name__ == "__main__":  # true if this file NOT imported
     app.debug = True        # enable auto-reload upon code change
     app.run()
-
 
 
 # from flask import Flask
