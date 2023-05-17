@@ -10,7 +10,7 @@
 ### Information regarding location, menu items, and nutrition info compared between various chains and specific locations.
 
 APIs:
-* maps embed : https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_Google_Maps_Platform.md 
+* maps embed : https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_OpenStreetMap.md 
 
 --
 
