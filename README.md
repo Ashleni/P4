@@ -6,7 +6,8 @@
 * Shafiul Haque : html , css
 
 
-### Creating interactive maps of the US detailing the location of fast food restaurants, with filtering options available by chain.
+### Interactive maps and charts detailing information of United States fast food restaurants, with filtering options available by chain.
+### Information regarding location, menu items, and nutrition info.
 
 APIs:
 * maps embed : https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_Google_Maps_Platform.md 
