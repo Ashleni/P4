@@ -10,3 +10,8 @@ Added more details regarding JS visualizations.
 ShreyaR, ShafiulH, JeffreyZ KostaD -- 05/07 9:00
 
 root route yields HTML page with linked JS
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JeffreyZ -- 05/17 9:00 PM
+
+added functionality to map, created function to get coords and display markers

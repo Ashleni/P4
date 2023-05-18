@@ -2,14 +2,15 @@
 
 * Shreya Roy : PM , js
 * Jeffrey Zou : flask , api
-* Kosta Dubovskiy : js , db
-* Shafiul Haque : html , css
+* Kosta Dubovskiy : html, css
+* Shafiul Haque : db, flask
 
 
-### Creating interactive maps of the US detailing the location of fast food restaurants, with filtering options available by chain.
+### Interactive maps and charts detailing information of United States fast food restaurants, with filtering options available by chain.
+### Information regarding location, menu items, and nutrition info compared between various chains and specific locations.
 
 APIs:
-* maps embed : https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_Google_Maps_Platform.md 
+* maps embed : https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_OpenStreetMap.md 
 
 --
 
