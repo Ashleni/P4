@@ -2,8 +2,8 @@
 
 * Shreya Roy : PM , js
 * Jeffrey Zou : flask , api
-* Kosta Dubovskiy : js , db
-* Shafiul Haque : html , css
+* Kosta Dubovskiy : html, css
+* Shafiul Haque : db, flask
 
 
 ### Interactive maps and charts detailing information of United States fast food restaurants, with filtering options available by chain.
