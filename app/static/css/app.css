@@ -5,3 +5,13 @@
 .graph {
     margin: .5rem;
 }
+
+text {
+    padding: 1rem;
+    margine: 1rem;
+}
+
+.barChart {
+    padding-top: 1rem;
+    margine-top: 1rem;
+}
