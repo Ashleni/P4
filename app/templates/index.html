@@ -149,7 +149,14 @@
     src="https://observablehq.com/embed/@mbostock/the-wealth-health-of-nations?cells=viewof+date%2Clegend%2Cchart"></iframe>
       </div>
 
+
+
+
+	
+	
+
       <div id="map" style="width: auto; height: 30rem; position: relative; margin-bottom: 5rem;">
+	  
         <script>
 
           const map = L.map('map').setView([40.718315, -74.014249], 16);
@@ -166,7 +173,8 @@
               for (var i = 0; i < restaurants.length; i++) {
                 var restaurant = restaurants[i];
                 var name = restaurant[0];
-                if (name.includes("McDonald's")) {  // Filter restaurants based on name
+				console.log(search);
+                if (name.includes(search)) {  // Filter restaurants based on name
                   var lat = restaurant[1];
                   var lon = restaurant[2];
                   var circleMarker = L.circleMarker([lat, lon], {
@@ -181,13 +189,54 @@
                 }
               }
             });
-
-
-
-
-
         </script>
-      </div>
+		
+		</div>
+		
+		
+
+	    <form id="form"> 
+		<input type="search" id="query" name="q" placeholder="Type Restaurant Name..">
+		<button>Search!</button>
+		</form>
+		
+		<script>
+      const f = document.getElementById('form');
+      const q = document.getElementById('query');
+	  var search = "McDonald's"
+      function submitted(event) {
+        event.preventDefault();
+        var search = q.value;
+		fetch('/restaurants')
+            .then(response => response.json())
+            .then(restaurants => {
+              for (var i = 0; i < restaurants.length; i++) {
+                var restaurant = restaurants[i];
+                var name = restaurant[0];
+				console.log(search);
+                if (name.includes(search)) {  // Filter restaurants based on name
+                  var lat = restaurant[1];
+                  var lon = restaurant[2];
+                  var circleMarker = L.circleMarker([lat, lon], {
+                    radius: 8,
+                    fillColor: "blue",
+                    color: "white",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                  }).addTo(map);
+                  circleMarker.bindPopup(name);
+                }
+              }
+            }
+		
+      }
+
+      f.addEventListener('submit', submitted);
+    </script>
+	
+	
+      
 
 
       <script src="https://d3js.org/d3.v5.min.js"></script>

@@ -58,6 +58,8 @@ def get_restaurant_coordinates():
     print(restaurants)
     return jsonify(restaurants)
 
+
+
 @app.route('/get_piechart_data')
 def get_piechart_data():
    contract_labels = ['Month-to-month', 'One year', 'Two year']
