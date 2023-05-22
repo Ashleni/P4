@@ -15,3 +15,12 @@ root route yields HTML page with linked JS
 JeffreyZ -- 05/17 9:00 PM
 
 added functionality to map, created function to get coords and display markers
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShafiulH -- 05/19 9:00 AM
+acted as an emissary to other groups, took notes on what each group did well/wanted to work on
+- Craig's group: used js to create graphs regarding each country, referred to by clicking on the map
+- Henry's group: implemented a globe through an API which you can rotate, and click for more informaiton
+- April's group: table of taylor swift songs which uses data from an API
+- Ryan's group: circles representing drop off/drop on places for taxis, which they'll later use boundaries for
+- Sebastian's group: clicking on NBA teams saves your choice, probably will import more information on each team once selected
