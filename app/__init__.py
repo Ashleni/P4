@@ -30,8 +30,7 @@ if (countrest() == 0):
 
 @app.route("/")
 def index():
-    restaurants = get_restaurant_coordinates()
-    return render_template('index.html', restaurants = restaurants)
+    return render_template('index.html')
 
 def calculate_percentage(val, total):
    """Calculates the percentage of a value over a total"""
@@ -47,16 +46,14 @@ def data_creation(data, percent, class_labels, group=None):
        data.append(data_instance)
 
 @app.route('/restaurants')
-def get_restaurant_coordinates():
+def get_rest_coordinates():
     db = sqlite3.connect('p4.db')
     print("Database connection successful")
     c = db.cursor()
-    c.execute("SELECT name, latitude, longitude FROM usrest;")
-    restaurants = c.fetchall()
+    usrestlist = c.execute("SELECT address, city, country, keys, latitude, longitude, name, postalcode, province, websites from usrest;").fetchall()
     db.commit()
     db.close()
-    print(restaurants)
-    return jsonify(restaurants)
+    return jsonify(usrestlist)
 
 
 

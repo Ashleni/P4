@@ -56,7 +56,7 @@ def get_rest_everything():
     usrestlist = c.execute("SELECT address, city, country, keys, latitude, longitude, name, postalcode, province, websites from usrest;").fetchall()
     db.commit()
     db.close()
-    return usrestlist
+    return jsonify(usrestlist)
 
 def get_nutr_everything():
     db = sqlite3.connect(DB_FILE)
