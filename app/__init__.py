@@ -93,6 +93,11 @@ def get_barchart_data():
    data_creation(barchart_data,one_percent, tenure_labels, "One year")
    data_creation(barchart_data,two_percent, tenure_labels, "Two year")
    return jsonify(barchart_data)
+   
+   
+@app.route('/pieChart')
+def get_pieChart_data():
+    return get_for_piechart("McDonald's")
 
 
 if __name__ == "__main__":  # true if this file NOT imported
