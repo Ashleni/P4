@@ -1,5 +1,5 @@
 restaurant,item,calories,cal_fat,total_fat,sat_fat,trans_fat,cholesterol,sodium,total_carb,fiber,sugar,protein,vit_a,vit_c,calcium,salad
-Mcdonalds,Artisan Grilled Chicken Sandwich,380,60,7,2,0,95,1110,44,3,11,37,4,20,20,Other
+Mcdonalds,Artisan Grilled Chicken Sandwich,380.0,60.0,7.0,2.0,0.0,95.0,1110.0,44.0,3.0,11.0,37.0,4.0,20.0,20.0,Other
 Mcdonalds,Single Bacon Smokehouse Burger,840,410,45,17,1.5,130,1580,62,2,18,46,6,20,20,Other
 Mcdonalds,Double Bacon Smokehouse Burger,1130,600,67,27,3,220,1920,63,3,18,70,10,20,50,Other
 Mcdonalds,Grilled Bacon Smokehouse Chicken Sandwich,750,280,31,10,0.5,155,1940,62,2,18,55,6,25,20,Other

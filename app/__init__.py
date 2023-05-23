@@ -20,12 +20,17 @@ data_df = pd.read_csv("./static/data/churn_data.csv")
 churn_df = data_df[(data_df['Churn']=="Yes").notnull()]
 
 #csv reader, already completed created db
-'''df = pd.read_csv('static/data/FastFoodRestaurants.csv', skiprows=0)
+df = pd.read_csv('static/data/FastFoodRestaurants.csv', skiprows=0)
 
 if (countrest() == 0):
     for i in range(len(df.index)):
-        store_rest_data(df.loc[i])'''
+        store_rest_data(df.loc[i])
 
+dx = pd.read_csv('static/data/fastfood.csv', skiprows=0)
+
+if (countnutr() == 0):
+    for i in range(len(dx.index)):
+        store_nutr_data(dx.loc[i])
 
 
 @app.route("/")

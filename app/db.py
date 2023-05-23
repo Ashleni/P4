@@ -50,6 +50,12 @@ def countrest():
     count_rest = c.fetchone()[0]
     return count_rest
 
+def countnutr():
+    count_nutr = c.execute("""SELECT COUNT(*) FROM nutr""")
+    count_nutr = c.fetchone()[0]
+    return count_nutr
+
+
 def get_rest_everything():
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
