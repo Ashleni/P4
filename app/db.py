@@ -84,3 +84,14 @@ def get_restaurant_coordinates():
     db.close()
     print(restaurants)
     return jsonify(restaurants)
+
+def get_for_treemap(name):
+    db = sqlite3.connect('p4.db')
+    print("Database connection successful")
+    c = db.cursor()
+    c.execute("SELECT province FROM usrest;")
+    restaurants = c.fetchall()
+    db.commit()
+    db.close()
+    print(restaurants)
+    return jsonify(restaurants)
