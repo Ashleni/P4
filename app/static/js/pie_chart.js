@@ -23,6 +23,36 @@ var BKing = function(e){
 var Sonic = function(e){
   return pieChart(0,3,1,8);
 }
+var Wendy = function(e){
+  return pieChart(105,215,98,313);
+}
+var Domino = function(e){
+  return pieChart(113,64,50,118);
+}
+var Whataburger = function(e){
+  return pieChart(3,0,0,85);
+}
+var Popeyes = function(e){
+  return pieChart(10,10,22,13);
+}
+var Subway = function(e){
+  return pieChart(121,88,54,141);
+}
+var PizzaHut = function(e){
+  return pieChart(56,17,5,50);
+}
+var Arbys = function(e){
+  return pieChart(61,205,37,214);
+}
+var ChickfilA = function(e){
+  return pieChart(12,22,9,103);
+}
+var JackintheBox = function(e){
+  return pieChart(125,15,0,61);
+}
+var Bojangles = function(e){
+  return pieChart(0,0,0,126);
+}
 
 
 
@@ -45,6 +75,7 @@ const svg = d3.select("#pie_chart")
 
 
 const data = {West: west, Midwest: midwest, Northeast:northeast, South:south}
+
 
 // color scale
 var color = d3.scaleOrdinal()

@@ -35,7 +35,8 @@ if (countnutr() == 0):
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    chains = ['wendys', 'dominos', 'sonic', 'taco bell', 'whataburger', 'popeyes', 'subway', 'pizza hut', 'arbys', 'chick-fil-a', 'jack in the box', 'bojangles']
+    return render_template('index.html', chains=chains)
 
 def calculate_percentage(val, total):
    """Calculates the percentage of a value over a total"""
@@ -52,7 +53,7 @@ def data_creation(data, percent, class_labels, group=None):
 
 @app.route("/insights")
 def insights():
-    restaurants = ["McDonald's", "Burger King", "Taco Bell", "Sonic"]
+    restaurants = ["McDonald's", "Burger King", "Wendy's", "Domino's", "Taco Bell", "Sonic", "Whataburger", "Popeyes", "Subway", "Pizza Hut", "Arby's", "Chick-fil-A", "Jack-in-the-Box", "Bojangle's"]
     restaurant = "McDonald's"
     return render_template('insights.html', restaurant = restaurant, restaurants=restaurants)
 

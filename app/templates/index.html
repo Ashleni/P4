@@ -105,6 +105,10 @@
           <option value="all">All</option>
           <option value="mcdonalds">McDonald's</option>
           <option value="burgerking">Burger King</option>
+		  <option value="wendys">{{chains[0].capitalize()}}</option>
+		{% for i in chains[1:] %}
+	      <option value= "{{i}}"> {{i.capitalize()}}</option>
+        {% endfor %}
           <!-- Add more options for other fast food restaurants if needed -->
         </select>
       </div>
@@ -140,11 +144,11 @@
               });
 
               markers.push(circleMarker);
-              if (name === "McDonald's") {
-                console.log(`Restaurant: ${name}`);
-                console.log(`Index: ${i}`);
-                console.log(`Coordinates: ${lat}, ${lon}`);
-              }
+              //if (name === "McDonald's") {
+              //  console.log(`Restaurant: ${name}`);
+              //  console.log(`Index: ${i}`);
+              //  console.log(`Coordinates: ${lat}, ${lon}`);
+              //}
             }
 
             showMarkers(); // Show all markers by default
@@ -157,18 +161,33 @@
 
         function filterMarkers(value) {
           const filterValue = value.toLowerCase();
+		  console.log(filterValue);
           markers.forEach(marker => {
             const markerName = marker.getPopup().getContent().toLowerCase();
             const isMcDonalds = markerName.includes("mcdonald's");
             const isBurgerKing = markerName.includes("burger king");
+			const isWendys = markerName.includes("wendy");
+			const isDominos = markerName.includes("domino");
+			const isSonic = markerName.includes("sonic");
+			const isTacoBell = markerName.includes("taco bell");
+			const isWhataburger = markerName.includes("whataburger");
+			const isPopeyes = markerName.includes("popeye");
+			const isSubway = markerName.includes("subway");
+			const isPizzaHut = markerName.includes("pizza hut");
+			const isArbys = markerName.includes("arby's");
+			const isChickfilA = markerName.includes("chick-fil-a");
+			const isJackintheBox = markerName.includes("jack in the box");
+			const isBojangles = markerName.includes("bojangle");
 
-            if (filterValue === 'all' || (filterValue === 'mcdonalds' && isMcDonalds) || (filterValue === 'burgerking' && isBurgerKing)) {
+            if (filterValue === 'all' || (filterValue === 'mcdonalds' && isMcDonalds) || (filterValue === 'burgerking' && isBurgerKing) || (filterValue === 'wendys' && isWendys) || (filterValue === 'dominos' && isDominos) || (filterValue === 'sonic' && isSonic) || (filterValue === 'taco bell' && isTacoBell) || (filterValue === 'whataburger' && isWhataburger) || (filterValue === 'popeyes' && isPopeyes) || (filterValue === 'subway' && isSubway) || (filterValue === 'pizza hut' && isPizzaHut) || (filterValue === 'arbys' && isArbys) || (filterValue === 'chick-fil-a' && isChickfilA) || (filterValue === 'jack in the box' && isJackintheBox) || (filterValue === 'bojangles' && isBojangles)
+			) {
               marker.addTo(map);
             } else {
               marker.removeFrom(map);
             }
           });
         }
+
 
         const filterSelect = document.getElementById('filter-select');
         filterSelect.addEventListener('change', function () {
