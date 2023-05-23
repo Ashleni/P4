@@ -45,6 +45,22 @@ def data_creation(data, percent, class_labels, group=None):
        data_instance['group'] = group
        data.append(data_instance)
 
+@app.route("/insights")
+def insights():
+    return render_template('insights.html')
+
+@app.route("/analysis")
+def analysis():
+    return render_template('analysis.html')
+
+@app.route("/takeaways")
+def takeaways():
+    return render_template('takeaways.html')
+
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
 @app.route('/restaurants')
 def get_rest_coordinates():
     db = sqlite3.connect('p4.db')
