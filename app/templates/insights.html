@@ -63,24 +63,60 @@
         <main>
             <h1>Insights</h1>
 			
+	  <p>Currently displaying {{restaurant}}</p>
+			
 	  <div id="pie_chart">
       </div>
 	  <script src="../static/js/pie_chart.js"></script>
 	 
       <div id="filter-container">
         <label for="filter">Choose Restaurant:</label>
-        <select id="filter">
-          <option value="McDo">McDonald's</option>
-          <option value="TacoBell">Taco Bell</option>
+		
+		<form method ="POST" id = "choose"> 
+         <select id="chosen" name="chosen" >
+		  <option value= "{{restaurants[0]}}" SELECTED> {{restaurants[0]}}</option>
+		{% for i in restaurants[1:] %}
+	      <option value= "{{i}}" > {{i}}</option>
+        {% endfor %}
         </select>
+		<!--<input title = "Submit" type="submit">-->
+		 </form>
       </div>
 	  
+	  <script>
+	  function change(selected){
+		console.log(selected);
+		//document.getElementById("pie_chart").remove();
+		if (selected == "Taco Bell"){
+			TacoBell();
+		}
+		if (selected == "Burger King"){
+			BKing();
+		}
+		if (selected == "Sonic"){
+			Sonic();
+		}
+		if (selected == "McDonald's"){
+			McDo();
+		}
+	  }
+	  
+	  const filter = document.getElementById('chosen');
+	  filter.addEventListener('change', function () {
+		const selected = filter.value;
+		change(selected);
+	  });
+	  </script>
+	  
+	  
+
 	  
         </main>
         <footer class="pt-5 my-5 text-muted border-top">
             Created by The We're Witty Wombats &middot; &copy; 2023
         </footer>
-    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+	</div>
 </body>
 
 </html>

@@ -52,7 +52,9 @@ def data_creation(data, percent, class_labels, group=None):
 
 @app.route("/insights")
 def insights():
-    return render_template('insights.html')
+    restaurants = ["McDonald's", "Burger King", "Taco Bell", "Sonic"]
+    restaurant = "McDonald's"
+    return render_template('insights.html', restaurant = restaurant, restaurants=restaurants)
 
 @app.route("/analysis")
 def analysis():
