@@ -115,3 +115,7 @@ ShreyaR -- 05/23 11:00 PM
 Filtering options for graphs.. last min new graph
 bug fixes and lots of cleaning up code...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JeffreyZ -- 05/24 12:00 AM
+
+added full screen mode, cleaned up routes, made linechart
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

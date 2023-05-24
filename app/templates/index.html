@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -12,10 +12,6 @@
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
   <link href="{{url_for('static',filename='css/app.css')}}" rel="stylesheet">
-
-
-
-
   <!-- Bootstrap core CSS -->
   <!-- <link href="../static/css/starter-template.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -40,7 +36,6 @@
 
   <!-- Custom styles for this template -->
   <link href="../static/css/starter-template.css" rel="stylesheet">
-  <link rel="stylesheet" href="darktheme.css" />
 </head>
 
 <body>
@@ -69,9 +64,6 @@
         environment.
       </p>
 
-
-	  
-	  
       <hr class="col-3 col-md-2 mb-5">
       <!--
 	  <div class="visualization row align-items-end"> 
@@ -79,157 +71,34 @@
         <div id="barChart" class="graph p-3 col" style="padding: 1re"></div>
       </div>
 	  -->
-      <div class="visualization row align-items-end">
-        <!-- Horizontal Bar Chart -->
-        <iframe width="100%" height="400" frameborder="0" src="https://observablehq.com/embed/@d3/hierarchical-bar-chart?cells=chart" class="col"></iframe>
-      </div>
-      <div class="visualization row align-items-end">
-        <h3>Walmart's Growth in the U.S. 1962-Present</h3>
-        <iframe width="100%" height="854" frameborder="0"
-  src="https://observablehq.com/embed/@mbostock/walmarts-growth?cells=viewof+date%2Cchart"></iframe>
-      </div>
-      <div class="visualization row align-items-end">
-        <h3>The Wealth & Health of Nations</h3>
-        <iframe width="100%" height="744" frameborder="0"
-    src="https://observablehq.com/embed/@mbostock/the-wealth-health-of-nations?cells=viewof+date%2Clegend%2Cchart"></iframe>
-      </div>
-
-
+      
+    <div id="map-container">
       <div id="filter-container">
         <label for="filter-select">Filter by Restaurant:</label>
         <select id="filter-select">
           <option value="all">All</option>
           <option value="mcdonalds">McDonald's</option>
           <option value="burgerking">Burger King</option>
-		  <option value="wendys">{{chains[0].capitalize()}}</option>
-		{% for i in chains[1:] %}
-	      <option value= "{{i}}"> {{i.capitalize()}}</option>
-        {% endfor %}
+          <option value="wendys">{{chains[0].capitalize()}}</option>
+          {% for i in chains[1:] %}
+          <option value="{{i}}"> {{i.capitalize()}}</option>
+          {% endfor %}
           <!-- Add more options for other fast food restaurants if needed -->
         </select>
       </div>
-	  
-      <div id="map" style="width: auto; height: 30rem; position: relative; margin-bottom: 5rem;"></div>
+      
+        <div id="map" class="leaflet-map" style="width: auto; height: 60rem; margin-top:5rem; position: relative;  margin-bottom: 5rem;">
+        </div>
+        <button id="fullscreen-btn" onclick="toggleFullScreen()">Toggle Full Screen</button>
+      </div>
+      
 
-      <script>
-        const map = L.map('map').setView([40.718315, -74.014249], 16);
-        const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
+ 
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="../static/js/index.js"></script>
+      <script src="../static/js/map.js"></script>
 
-        const markers = [];
-
-        fetch('/restaurants')
-          .then(response => response.json())
-          .then(restaurants => {
-            for (let i = 0; i < restaurants.length; i++) {
-              const restaurant = restaurants[i];
-              const name = restaurant[6];
-              const lat = restaurant[4];
-              const lon = restaurant[5];
-			  const address = restaurant[0];
-			  const city = restaurant[1];
-			  const zip = restaurant[7];
-			  const state = restaurant[8];
-              const circleMarker = L.circleMarker([lat, lon], {
-                radius: 7,
-                fillColor: "blue",
-                color: "white",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-              }).bindPopup(`${name}<br>Address: ${address}, ${city} ${state}, ${zip}`).on('mouseover', function () {
-                this.openPopup();
-              }).on('mouseout', function () {
-                this.closePopup();
-              });
-
-              markers.push(circleMarker);
-              //if (name === "McDonald's") {
-              //  console.log(`Restaurant: ${name}`);
-              //  console.log(`Index: ${i}`);
-              //  console.log(`Coordinates: ${lat}, ${lon}`);
-              //}
-            }
-
-            showMarkers(); // Show all markers by default
-            console.log(`Total markers: ${markers.length}`);
-          });
-
-        function showMarkers() {
-          markers.forEach(marker => marker.addTo(map));
-        }
-
-        function filterMarkers(value) {
-          const filterValue = value.toLowerCase();
-		  console.log(filterValue);
-          markers.forEach(marker => {
-            const markerName = marker.getPopup().getContent().toLowerCase();
-            const isMcDonalds = markerName.includes("mcdonald's");
-            const isBurgerKing = markerName.includes("burger king");
-			const isWendys = markerName.includes("wendy");
-			const isDominos = markerName.includes("domino");
-			const isSonic = markerName.includes("sonic");
-			const isTacoBell = markerName.includes("taco bell");
-			const isWhataburger = markerName.includes("whataburger");
-			const isPopeyes = markerName.includes("popeye");
-			const isSubway = markerName.includes("subway");
-			const isPizzaHut = markerName.includes("pizza hut");
-			const isArbys = markerName.includes("arby's");
-			const isChickfilA = markerName.includes("chick-fil-a");
-			const isJackintheBox = markerName.includes("jack in the box");
-			const isBojangles = markerName.includes("bojangle");
-
-            if (filterValue === 'all' || (filterValue === 'mcdonalds' && isMcDonalds) || (filterValue === 'burgerking' && isBurgerKing) || (filterValue === 'wendys' && isWendys) || (filterValue === 'dominos' && isDominos) || (filterValue === 'sonic' && isSonic) || (filterValue === 'taco bell' && isTacoBell) || (filterValue === 'whataburger' && isWhataburger) || (filterValue === 'popeyes' && isPopeyes) || (filterValue === 'subway' && isSubway) || (filterValue === 'pizza hut' && isPizzaHut) || (filterValue === 'arbys' && isArbys) || (filterValue === 'chick-fil-a' && isChickfilA) || (filterValue === 'jack in the box' && isJackintheBox) || (filterValue === 'bojangles' && isBojangles)
-			) {
-              marker.addTo(map);
-            } else {
-              marker.removeFrom(map);
-            }
-          });
-        }
-
-
-        const filterSelect = document.getElementById('filter-select');
-        filterSelect.addEventListener('change', function () {
-          const selectedValue = filterSelect.value;
-          filterMarkers(selectedValue);
-        });
-      </script>
-
-	
-    <div id="filter-container">
-        <label for="filter-select">Number of Restaurants Per...</label>
-        <select id="bar" name = "bar">
-          <option value="state">State</option>
-          <option value="chain">Restaurant Chain</option>
-        </select>
-    </div>
-	
-    <script>
-	  function switched(bar){
-		console.log(bar);
-		if (bar == "state"){state();}
-		if (bar == "chain"){chain();}
-		}
-		
-	  const filter = document.getElementById('bar');
-	  filter.addEventListener('change', function () {
-		const selected = filter.value;
-		//document.getElementById("bar").innerHTML = "Currently displaying the regional distribution of " + selected
-		switched(selected);
-	  });	
-	</script>
-	
-	<div>
-		<canvas id="stateBar"></canvas>
-	</div>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<script src="../static/js/index.js"></script>
-
-
-	
 
       <script src="https://d3js.org/d3.v5.min.js"></script>
 
@@ -246,16 +115,8 @@
 
 
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.getElementById('btnSwitch').addEventListener('click',()=>{
-      if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
-          document.documentElement.setAttribute('data-bs-theme','light')
-      }
-      else {
-          document.documentElement.setAttribute('data-bs-theme','dark')
-      }
-  })
-    </script>
+
+
 </body>
 
 </html>
