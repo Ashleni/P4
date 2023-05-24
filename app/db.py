@@ -146,20 +146,40 @@ def interpretLabel():
     for i in result:
         final.append(i[0])
     return final    
-
-'''
-def interpretLabel():
+    
+def interpretChainsLabel():
     db = sqlite3.connect('p4.db')
     print("Database connection successful")
     c = db.cursor()
-    c.execute("SELECT postalCode, Count(postalCode) as TotalRepetitions From usrest Group By postalCode Order By TotalRepetitions DESC")
+    c.execute('''SELECT name, Count(name) as TotalRepetitions From usrest Group By name Order By TotalRepetitions DESC''')
     result = c.fetchall()
     db.commit()
     db.close()
-    return result
-'''
+    final = []
+    i = 0
+    while i < 15:
+        final.append(result[i][0])
+        i += 1
+    return final   
     
-print(interpretLabel())
+def interpretChainsData():
+    db = sqlite3.connect('p4.db')
+    print("Database connection successful")
+    c = db.cursor()
+    c.execute('''SELECT name, Count(name) as TotalRepetitions From usrest Group By name Order By TotalRepetitions DESC''')
+    result = c.fetchall()
+    db.commit()
+    db.close()
+    final = []
+    i = 0
+    while (i < 15):
+        final.append(result[i][1])
+        i+= 1
+    return final
+
+
+    
+#print(interpretChainsData())
 
 
 

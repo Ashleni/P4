@@ -127,6 +127,14 @@ def state_data():
 @app.route('/stateBarLabel')
 def state_label():
     return  interpretLabel()
+    
+@app.route('/chainBarLabel')
+def chain_label():
+    return interpretChainsLabel()
+    
+@app.route('/chainBarData')
+def chain_data():
+    return interpretChainsData()
 
 if __name__ == "__main__":  # true if this file NOT imported
     app.debug = True        # enable auto-reload upon code change

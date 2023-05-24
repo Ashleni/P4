@@ -95,13 +95,6 @@
       </div>
 
 
-
-
-	
-	
-
-      <div id="map" style="width: auto; height: 30rem; position: relative; margin-bottom: 5rem;"></div>
-
       <div id="filter-container">
         <label for="filter-select">Filter by Restaurant:</label>
         <select id="filter-select">
@@ -115,6 +108,8 @@
           <!-- Add more options for other fast food restaurants if needed -->
         </select>
       </div>
+	  
+      <div id="map" style="width: auto; height: 30rem; position: relative; margin-bottom: 5rem;"></div>
 
       <script>
         const map = L.map('map').setView([40.718315, -74.014249], 16);
@@ -204,12 +199,35 @@
       </script>
 
 	
+    <div id="filter-container">
+        <label for="filter-select">Number of Restaurants Per...</label>
+        <select id="bar" name = "bar">
+          <option value="state">State</option>
+          <option value="chain">Restaurant Chain</option>
+        </select>
+    </div>
+	
+    <script>
+	  function switched(bar){
+		console.log(bar);
+		if (bar == "state"){state();}
+		if (bar == "chain"){chain();}
+		}
+		
+	  const filter = document.getElementById('bar');
+	  filter.addEventListener('change', function () {
+		const selected = filter.value;
+		//document.getElementById("bar").innerHTML = "Currently displaying the regional distribution of " + selected
+		switched(selected);
+	  });	
+	</script>
 	
 	<div>
 		<canvas id="stateBar"></canvas>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="../static/js/index.js"></script>
+
 
 	
 
