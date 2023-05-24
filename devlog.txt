@@ -37,6 +37,15 @@ ShafiulH -- 05/11 10:07 PM
 imported csv from kaggle for both datasets
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShreyaR -- 05/14 1:40 PM
+
+Preliminary graphs r in! (not using fastfood dataset yet! only sample data)
+1 pie chart, 1 bar graph
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShreyaR -- 05/15 9:40 AM
+
+Droplet active w/ P4 running!!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ShafiulH -- 05/16 10:07 PM
 
 finished function for reading csv file and parsing it using pandas
@@ -66,8 +75,26 @@ acted as an emissary to other groups, took notes on what each group did well/wan
 - Sebastian's group: clicking on NBA teams saves your choice, probably will import more information on each team once selected
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShreyaR -- 05/14 1:40 PM
+
+Preliminary graphs (not using fastfood dataset yet! only sample data)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 JeffreyZ -- 05/22 9:00 PM
 
 added map filters for various restaurants, bug fix for when restaurants dont get their markers
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShreyaR -- 05/22 9:30 AM
+
+graph on insights page now user interactive
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShreyaR -- 05/22 12:40 AM
+
+All graphs use fast food database + fully functional
+added many more map filters and options for insights
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShreyaR -- 05/23 11:00 PM
+
+Filtering options for graphs.. last min new graph
+bug fixes and lots of cleaning up code...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
