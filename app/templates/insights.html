@@ -63,7 +63,7 @@
         <main>
             <h1>Insights</h1>
 			
-	  <p>Currently displaying {{restaurant}}</p>
+	  <p id="displaying">Currently displaying the regional distribution of {{restaurant}}</p>
 			
 	  <div id="pie_chart">
       </div>
@@ -134,6 +134,7 @@
 	  const filter = document.getElementById('chosen');
 	  filter.addEventListener('change', function () {
 		const selected = filter.value;
+		document.getElementById("displaying").innerHTML = "Currently displaying the regional distribution of " + selected
 		change(selected);
 	  });
 	  </script>
