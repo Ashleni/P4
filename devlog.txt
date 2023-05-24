@@ -7,14 +7,54 @@ Changed Component Math to relfect changes in DB
 Added more details regarding JS visualizations.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShafiulH -- 05/05 10:07 PM
+
+starting working on db file and creating methods
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ShreyaR, ShafiulH, JeffreyZ KostaD -- 05/07 9:00
 
 root route yields HTML page with linked JS
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShafiulH -- 05/08 10:07 PM
+
+removed cache files, added default template and database files
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShafiulH -- 05/09 10:07 PM
+
+imported kaggle data for restaurants, created functions to store data
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShafiulH -- 05/10 10:07 PM
+
+creating more sqlite tables for the data
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShafiulH -- 05/11 10:07 PM
+
+imported csv from kaggle for both datasets
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShafiulH -- 05/16 10:07 PM
+
+finished function for reading csv file and parsing it using pandas
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 JeffreyZ -- 05/17 9:00 PM
 
 added functionality to map, created function to get coords and display markers
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShafiulH -- 05/18 10:07 PM
+
+datasets read into pandas table, no need for csv now
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ShafiulH -- 05/19 10:07 PM
+
+finished reading in the data for nutrition
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ShafiulH -- 05/19 9:00 AM
