@@ -72,10 +72,12 @@
 	  
 	  
       <hr class="col-3 col-md-2 mb-5">
-      <div class="visualization row align-items-end"> 
+      <!--
+	  <div class="visualization row align-items-end"> 
         <div id="pieChart" class="graph p-3 col"></div>
         <div id="barChart" class="graph p-3 col" style="padding: 1re"></div>
       </div>
+	  -->
       <div class="visualization row align-items-end">
         <!-- Horizontal Bar Chart -->
         <iframe width="100%" height="400" frameborder="0" src="https://observablehq.com/embed/@d3/hierarchical-bar-chart?cells=chart" class="col"></iframe>
@@ -202,18 +204,15 @@
 
 	
 	
-      
+	<div>
+		<canvas id="stateBar"></canvas>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="../static/js/index.js"></script>
 
+	
 
       <script src="https://d3js.org/d3.v5.min.js"></script>
-      <script>
-        const pieChartDataUrl = "{{ url_for('get_piechart_data') }}";
-        const barChartDataUrl = "{{ url_for('get_barchart_data') }}";
-      </script>
-      <script src="{{ url_for('static', filename='js/pieChart.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/barChart.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/updateBarChart.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
       <div class="row g-5">
         <div class="col">

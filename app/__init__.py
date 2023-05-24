@@ -80,7 +80,7 @@ def get_rest_coordinates():
     return jsonify(usrestlist)
 
 
-
+'''
 @app.route('/get_piechart_data')
 def get_piechart_data():
    contract_labels = ['Month-to-month', 'One year', 'Two year']
@@ -114,12 +114,19 @@ def get_barchart_data():
    data_creation(barchart_data,one_percent, tenure_labels, "One year")
    data_creation(barchart_data,two_percent, tenure_labels, "Two year")
    return jsonify(barchart_data)
-   
+'''
    
 @app.route('/pieChart')
 def get_pieChart_data():
     return get_for_piechart("McDonald's")
+    
+@app.route('/stateBarData')
+def state_data():
+    return interpretData()
 
+@app.route('/stateBarLabel')
+def state_label():
+    return  interpretLabel()
 
 if __name__ == "__main__":  # true if this file NOT imported
     app.debug = True        # enable auto-reload upon code change
