@@ -22,7 +22,7 @@ ShafiulH -- 05/08 10:07 PM
 removed cache files, added default template and database files
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ShafiulH -- 05/09 10:07 PM
+ShafiulH, KostaD -- 05/09 10:07 PM
 
 imported kaggle data for restaurants, created functions to store data
 
@@ -30,6 +30,11 @@ imported kaggle data for restaurants, created functions to store data
 ShafiulH -- 05/10 10:07 PM
 
 creating more sqlite tables for the data
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+KostaD -- 05/10 10:15 PM
+
+Set up landing page template and basic formatting with Bootstrap.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ShafiulH -- 05/11 10:07 PM
@@ -45,6 +50,10 @@ Preliminary graphs r in! (not using fastfood dataset yet! only sample data)
 ShreyaR -- 05/15 9:40 AM
 
 Droplet active w/ P4 running!!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+KostaD -- 05/15 9:55 AM
+
+Set up columns/rows with bootstrap, navigation buttons, style sheets, and js components. Imported basic js maps, to fill space for now.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ShafiulH -- 05/16 10:07 PM
 
@@ -65,6 +74,10 @@ ShafiulH -- 05/19 10:07 PM
 
 finished reading in the data for nutrition
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+KostaD -- 05/19 10:16 PM
+
+SVG handling, found a good logo and set up nav bar formatting. Created templates for other pages.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ShafiulH -- 05/19 9:00 AM
 acted as an emissary to other groups, took notes on what each group did well/wanted to work on
@@ -87,6 +100,10 @@ added map filters for various restaurants, bug fix for when restaurants dont get
 ShreyaR -- 05/22 9:30 AM
 
 graph on insights page now user interactive
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+KostaD -- 05/22 10:15 AM
+
+Fleshed out other templates, added styling, etc. Routing now works. Buttons highlight and stay highlighted for active page.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ShreyaR -- 05/22 12:40 AM
 
