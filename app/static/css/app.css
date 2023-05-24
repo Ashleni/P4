@@ -49,6 +49,15 @@ text {
     color: #333;
   }
 
+  #filter-container select {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
   #displaying {
     display: flex;
     align-items: center;
@@ -80,4 +89,239 @@ text {
     height: 65rem;
   }
   
- 
+
+  #menu-list div {
+    cursor: pointer;
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  #nutrition-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .menu-container {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .menu-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .menu-item {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .nutrition-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .nutrition-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .nutrition-info {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .nutrition-info div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .nutrition-info div:last-child {
+    margin-bottom: 0;
+  }
+  
+  .nutrition-info span {
+    font-weight: bold;
+  }
+
+  .menu-item {
+    transition: transform 0.2s ease;
+  }
+  
+  .menu-item:hover {
+    transform: scale(1.05);
+    background-color: #ffc107;
+    color: #ffc107;
+  }
+  
+  .nutrition-label {
+    animation: fade-in 0.3s ease;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* Add grid layout styles */
+#menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+
+  body {
+    background-color: #f8f9fa;
+    color: #333333;
+  }
+
+  .nutrition-container {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+
+  .nutrition-item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+  }
+
+  .nutrition-item:hover {
+    transform: scale(1.05);
+  }
+
+  .highlight-red {
+    background-color: #ff6b6b;
+    color: #ff6b6b;
+  }
+
+  .highlight-green {
+    background-color: #77dd77;
+    color: #77dd77;
+  }
+
+  .menu-item {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+
+  }
+
+  .menu-header {
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .menu-subheader {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .nutrition-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .nutrition-label {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .nutrition-label h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .nutrition-table {
+    width: 100%;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+  }
+  
+  .nutrition-table th,
+  .nutrition-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #cccccc;
+  }
+  
+  .nutrition-table th {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .nutrition-table td:last-child {
+    text-align: right;
+  }
+  
+  .nutrition-footnote {
+    font-size: 12px;
+    color: #777777;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .nutrition-footnote a {
+    color: #777777;
+    text-decoration: underline;
+  }
+  
+  .nutrition-footnote a:hover {
+    color: #333333;
+  }
+  
+  .highlight-red {
+    background-color: #ff6b6b;
+    color: #ff6b6b;
+  }
+
+  .highlight-green {
+    background-color: #77dd77;
+    color: #77dd77;
+  }

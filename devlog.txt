@@ -118,4 +118,5 @@ bug fixes and lots of cleaning up code...
 JeffreyZ -- 05/24 12:00 AM
 
 added full screen mode, cleaned up routes, made linechart
+added nutrition page 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

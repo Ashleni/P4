@@ -69,6 +69,10 @@ def takeaways():
 def about():
     return render_template('about.html')
 
+@app.route("/nutrition")
+def nutrition():
+    return render_template('nutrition.html')
+
 @app.route('/restaurants')
 def get_rest_coordinates():
     db = sqlite3.connect('p4.db')
@@ -78,6 +82,17 @@ def get_rest_coordinates():
     db.commit()
     db.close()
     return jsonify(usrestlist)
+
+@app.route('/nutritions')
+def get_nutritions():
+    db = sqlite3.connect('p4.db')
+    print("Database connection successful")
+    c = db.cursor()
+    restnutrlist = c.execute("SELECT rest, item, calories, calfat, totalfat, satfat, transfat, chol, sodium, totalcarb, fiber, sugar, protein, vita, vitc, calcium from nutr;").fetchall()
+    db.commit()
+    db.close()
+    print(restnutrlist)
+    return jsonify(restnutrlist)
 
 
 '''
