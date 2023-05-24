@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
   <meta charset="utf-8">
@@ -40,6 +40,7 @@
 
   <!-- Custom styles for this template -->
   <link href="../static/css/starter-template.css" rel="stylesheet">
+  <link rel="stylesheet" href="darktheme.css" />
 </head>
 
 <body>
@@ -52,11 +53,11 @@
         <span class="fs-4">We're Witty Wombats</span>
       </a>
       <div class="mx-auto">
-      <a href="/" class="btn btn-sm btn-secondary mx-2 text-right">Home</a>
-      <a href="/insights" class="btn btn-sm btn-outline-secondary mx-2 text-right">Insights</a>
-      <a href="/analysis" class="btn btn-sm btn-outline-secondary mx-2 float-end">Analysis</a>
-      <a href="/takeaways" class="btn btn-sm btn-outline-secondary mx-2 float-end">Takeaways</a>
-      <a href="/about" class="btn btn-sm btn-outline-secondary mx-2 float-end">About</a>
+        <a href="/" class="btn btn-sm btn-secondary mx-2 text-right">Home</a>
+        <a href="/insights" class="btn btn-sm btn-outline-secondary mx-2 text-right">Insights</a>
+        <a href="/analysis" class="btn btn-sm btn-outline-secondary mx-2 float-end">Analysis</a>
+        <a href="/takeaways" class="btn btn-sm btn-outline-secondary mx-2 float-end">Takeaways</a>
+        <a href="/about" class="btn btn-sm btn-outline-secondary mx-2 float-end">About</a>
       </div>
     </header>
 
@@ -207,8 +208,16 @@
 
 
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-
+  <script>
+    document.getElementById('btnSwitch').addEventListener('click',()=>{
+      if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
+          document.documentElement.setAttribute('data-bs-theme','light')
+      }
+      else {
+          document.documentElement.setAttribute('data-bs-theme','dark')
+      }
+  })
+    </script>
 </body>
 
 </html>
