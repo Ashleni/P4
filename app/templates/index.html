@@ -130,6 +130,10 @@
               const name = restaurant[6];
               const lat = restaurant[4];
               const lon = restaurant[5];
+			  const address = restaurant[0];
+			  const city = restaurant[1];
+			  const zip = restaurant[7];
+			  const state = restaurant[8];
               const circleMarker = L.circleMarker([lat, lon], {
                 radius: 7,
                 fillColor: "blue",
@@ -137,7 +141,7 @@
                 weight: 1,
                 opacity: 1,
                 fillOpacity: 0.8
-              }).bindPopup(`${name}<br>Coordinates: ${lat}, ${lon}`).on('mouseover', function () {
+              }).bindPopup(`${name}<br>Address: ${address}, ${city} ${state}, ${zip}`).on('mouseover', function () {
                 this.openPopup();
               }).on('mouseout', function () {
                 this.closePopup();
@@ -218,7 +222,7 @@
         </div>
     </main>
     <footer class="pt-5 my-5 text-muted border-top">
-      Created by The We're Witty Wombats &middot; &copy; 2023
+      Created by We're Witty Wombats &middot; &copy; 2023
     </footer>
   </div>
 
