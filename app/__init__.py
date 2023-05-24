@@ -20,17 +20,23 @@ data_df = pd.read_csv("./static/data/churn_data.csv")
 churn_df = data_df[(data_df['Churn']=="Yes").notnull()]
 
 #csv reader, already completed created db
-'''df = pd.read_csv('static/data/FastFoodRestaurants.csv', skiprows=0)
+df = pd.read_csv('static/data/FastFoodRestaurants.csv', skiprows=0)
 
 if (countrest() == 0):
     for i in range(len(df.index)):
-        store_rest_data(df.loc[i])'''
+        store_rest_data(df.loc[i])
 
+dx = pd.read_csv('static/data/fastfood.csv', skiprows=0)
+
+if (countnutr() == 0):
+    for i in range(len(dx.index)):
+        store_nutr_data(dx.loc[i])
 
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    chains = ['wendys', 'dominos', 'sonic', 'taco bell', 'whataburger', 'popeyes', 'subway', 'pizza hut', 'arbys', 'chick-fil-a', 'jack in the box', 'bojangles']
+    return render_template('index.html', chains=chains)
 
 def calculate_percentage(val, total):
    """Calculates the percentage of a value over a total"""
@@ -47,7 +53,9 @@ def data_creation(data, percent, class_labels, group=None):
 
 @app.route("/insights")
 def insights():
-    return render_template('insights.html')
+    restaurants = ["McDonald's", "Burger King", "Wendy's", "Domino's", "Taco Bell", "Sonic", "Whataburger", "Popeyes", "Subway", "Pizza Hut", "Arby's", "Chick-fil-A", "Jack-in-the-Box", "Bojangle's"]
+    restaurant = "McDonald's"
+    return render_template('insights.html', restaurant = restaurant, restaurants=restaurants)
 
 @app.route("/analysis")
 def analysis():
@@ -72,7 +80,7 @@ def get_rest_coordinates():
     return jsonify(usrestlist)
 
 
-
+'''
 @app.route('/get_piechart_data')
 def get_piechart_data():
    contract_labels = ['Month-to-month', 'One year', 'Two year']
@@ -106,12 +114,19 @@ def get_barchart_data():
    data_creation(barchart_data,one_percent, tenure_labels, "One year")
    data_creation(barchart_data,two_percent, tenure_labels, "Two year")
    return jsonify(barchart_data)
-   
+'''
    
 @app.route('/pieChart')
 def get_pieChart_data():
     return get_for_piechart("McDonald's")
+    
+@app.route('/stateBarData')
+def state_data():
+    return interpretData()
 
+@app.route('/stateBarLabel')
+def state_label():
+    return  interpretLabel()
 
 if __name__ == "__main__":  # true if this file NOT imported
     app.debug = True        # enable auto-reload upon code change

@@ -3,11 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Hugo 0.84.0">
-  <title>Starter Template · Bootstrap v5.0</title>
+  <title>Insights</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/starter-template/">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
@@ -62,11 +58,64 @@
         </header>
         <main>
             <h1>Insights</h1>
+			
+	  <p id="displaying">Currently displaying the regional distribution of {{restaurant}}</p>
+			
+	  <div id="pie_chart">
+      </div>
+	  <script src="../static/js/pie_chart.js"></script>
+	 
+      <div id="filter-container">
+        <label for="filter">Choose Restaurant:</label>
+		
+		<form method ="POST" id = "choose"> 
+         <select id="chosen" name="chosen" >
+		  <option value= "{{restaurants[0]}}" SELECTED> {{restaurants[0]}}</option>
+		{% for i in restaurants[1:] %}
+	      <option value= "{{i}}" > {{i}}</option>
+        {% endfor %}
+        </select>
+		<!--<input title = "Submit" type="submit">-->
+		 </form>
+      </div>
+	  
+	  <script>
+	  function change(selected){
+		console.log(selected);
+		//document.getElementById("pie_chart").remove();
+		if (selected == "Taco Bell"){TacoBell();}
+		if (selected == "Burger King"){BKing();}
+		if (selected == "Sonic"){Sonic();}
+		if (selected == "McDonald's"){McDo();}
+        if (selected == "Wendy's"){Wendy();}
+		if (selected == "Domino's"){Domino();}
+		if (selected == "Whataburger"){Whataburger();}
+		if (selected == "Popeyes"){Popeyes();}
+		if (selected == "Subway"){Subway();}
+		if (selected == "Pizza Hut"){PizzaHut();}
+		if (selected == "Arby's"){Arbys();}
+		if (selected == "Chick-fil-A"){ChickfilA();}
+		if (selected == "Jack-in-the-Box"){JackintheBox();}
+		if (selected == "Bojangle's"){Bojangles();}
+	  }
+	  
+	  const filter = document.getElementById('chosen');
+	  filter.addEventListener('change', function () {
+		const selected = filter.value;
+		document.getElementById("displaying").innerHTML = "Currently displaying the regional distribution of " + selected
+		change(selected);
+	  });
+	  </script>
+	  
+	  
+
+	  
         </main>
         <footer class="pt-5 my-5 text-muted border-top">
-            Created by The We're Witty Wombats &middot; &copy; 2023
+            Created by We're Witty Wombats &middot; &copy; 2023
         </footer>
-    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+	</div>
 </body>
 
 </html>

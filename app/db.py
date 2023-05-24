@@ -50,6 +50,12 @@ def countrest():
     count_rest = c.fetchone()[0]
     return count_rest
 
+def countnutr():
+    count_nutr = c.execute("""SELECT COUNT(*) FROM nutr""")
+    count_nutr = c.fetchone()[0]
+    return count_nutr
+
+
 def get_rest_everything():
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
@@ -113,3 +119,59 @@ def get_for_piechart(name):
         #final.append(i[0])
         #print(final)
     return jsonify(final)
+    
+def interpretData():
+    db = sqlite3.connect('p4.db')
+    print("Database connection successful")
+    c = db.cursor()
+    c.execute('''SELECT province, Count(province) as TotalRepetitions From usrest Group By province Order By TotalRepetitions DESC''')
+    result = c.fetchall()
+    db.commit()
+    db.close()
+    final = []
+    for i in result:
+        final.append(i[1])
+    return final
+    
+    
+def interpretLabel():
+    db = sqlite3.connect('p4.db')
+    print("Database connection successful")
+    c = db.cursor()
+    c.execute('''SELECT province, Count(province) as TotalRepetitions From usrest Group By province Order By TotalRepetitions DESC''')
+    result = c.fetchall()
+    db.commit()
+    db.close()
+    final = []
+    for i in result:
+        final.append(i[0])
+    return final    
+
+'''
+def interpretLabel():
+    db = sqlite3.connect('p4.db')
+    print("Database connection successful")
+    c = db.cursor()
+    c.execute("SELECT postalCode, Count(postalCode) as TotalRepetitions From usrest Group By postalCode Order By TotalRepetitions DESC")
+    result = c.fetchall()
+    db.commit()
+    db.close()
+    return result
+'''
+    
+print(interpretLabel())
+
+
+
+
+
+'''
+    SELECT *
+FROM usrest
+GROUP By province
+Having Count(*) = (
+SELECT MAX(Cnt) FROM(
+SELECT COUNT(*) as Cnt
+FROM usrest
+GROUP BY province) tmp)
+'''
